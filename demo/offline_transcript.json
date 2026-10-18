@@ -1,0 +1,105 @@
+{
+  "verification": "Scripted offline fixture, NOT live model responses",
+  "turns": [
+    {
+      "user": "What services do you offer?",
+      "reply": "Cedar & Circuit offers workflow automation, customer-support knowledge assistants, and reporting dashboards for small businesses. We start with a free 20-minute discovery call and document each handoff.",
+      "trace": {
+        "mode": "OFFLINE FIXTURE - no API call",
+        "route": "general_question",
+        "tool_calls": [],
+        "reflection": {
+          "draft": "Cedar & Circuit offers workflow automation, customer-support knowledge assistants, and reporting dashboards for small businesses. We start with a free 20-minute discovery call and document each handoff.",
+          "revised_reply": "Cedar & Circuit offers workflow automation, customer-support knowledge assistants, and reporting dashboards for small businesses. We start with a free 20-minute discovery call and document each handoff.",
+          "changed": false
+        }
+      }
+    },
+    {
+      "user": "I am Samira Mansour. I am interested in automating order tracking.",
+      "reply": "Thanks, Samira Mansour. Please share your email address so I can record your interest.",
+      "trace": {
+        "mode": "OFFLINE FIXTURE - no API call",
+        "route": "lead_collection",
+        "tool_calls": [],
+        "reflection": {
+          "draft": "Thanks, Samira Mansour. Please share your email address so I can record your interest.",
+          "revised_reply": "Thanks, Samira Mansour. Please share your email address so I can record your interest.",
+          "changed": false
+        }
+      }
+    },
+    {
+      "user": "samira@example.com",
+      "reply": "Thanks! I've recorded your name, email, and project notes for human follow-up. This records interest; it does not book an appointment.",
+      "trace": {
+        "mode": "OFFLINE FIXTURE - no API call",
+        "route": "lead_collection",
+        "tool_calls": [
+          {
+            "name": "record_customer_interest",
+            "arguments": "{\"name\": \"Samira Mansour\", \"email\": \"samira@example.com\", \"message\": \"I am Samira Mansour. I am interested in automating order tracking.\"}",
+            "result": {
+              "ok": true,
+              "record_id": "6a24376ab52f",
+              "status": "interest_recorded"
+            }
+          }
+        ],
+        "reflection": {
+          "draft": "Thanks! I've recorded your name, email, and project notes for human follow-up. This records interest; it does not book an appointment.",
+          "revised_reply": "Thanks! I've recorded your name, email, and project notes for human follow-up. This records interest; it does not book an appointment.",
+          "changed": false
+        }
+      }
+    },
+    {
+      "user": "Feedback: your contact form is broken.",
+      "reply": "Thank you for the feedback. I've recorded your comments for the team.",
+      "trace": {
+        "mode": "OFFLINE FIXTURE - no API call",
+        "route": "feedback_and_unanswered",
+        "tool_calls": [
+          {
+            "name": "record_feedback",
+            "arguments": "{\"question\": \"Feedback: your contact form is broken.\"}",
+            "result": {
+              "ok": true,
+              "record_id": "53239243c87d",
+              "status": "feedback_recorded"
+            }
+          }
+        ],
+        "reflection": {
+          "draft": "Thank you for the feedback. I've recorded your comments for the team.",
+          "revised_reply": "Thank you for the feedback. I've recorded your comments for the team.",
+          "changed": false
+        }
+      }
+    },
+    {
+      "user": "Do you hold ISO 27001 certification?",
+      "reply": "I don't have that information in our business profile. I've logged your question for the team. Would you like to leave your name and email for follow-up?",
+      "trace": {
+        "mode": "OFFLINE FIXTURE - no API call",
+        "route": "general_question",
+        "tool_calls": [
+          {
+            "name": "record_feedback",
+            "arguments": "{\"question\": \"Do you hold ISO 27001 certification?\"}",
+            "result": {
+              "ok": true,
+              "record_id": "9a5c4375acd2",
+              "status": "feedback_recorded"
+            }
+          }
+        ],
+        "reflection": {
+          "draft": "I don't have that information in our business profile. I've logged your question for the team. Would you like to leave your name and email for follow-up?",
+          "revised_reply": "I don't have that information in our business profile. I've logged your question for the team. Would you like to leave your name and email for follow-up?",
+          "changed": false
+        }
+      }
+    }
+  ]
+}

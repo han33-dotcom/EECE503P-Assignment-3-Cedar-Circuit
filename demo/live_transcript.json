@@ -1,0 +1,145 @@
+{
+  "verification": "Actual OpenAI API responses; fictional customer data",
+  "status": "passed",
+  "model": "gpt-4o-mini",
+  "turns_checked": 6,
+  "checks_passed": 6,
+  "turns": [
+    {
+      "user": "What services do you offer?",
+      "reply": "Cedar & Circuit offers three main services:\n\n1. **Workflow Automation**: Reduces repetitive tasks like order-status tracking and lead routing.\n2. **Knowledge Assistants**: Provides customer support answers using approved documents from clients.\n3. **Reporting Dashboards**: Summarizes operational data for teams to see what needs attention.\n\nEach project includes clear documentation, a handoff workshop, and a human review point for important decisions.",
+      "trace": {
+        "mode": "LIVE OpenAI",
+        "route": "general_question",
+        "tool_calls": [],
+        "reflection": {
+          "draft": "Cedar & Circuit offers three main services:\n\n1. **Workflow Automation**: Reduces repetitive tasks like order-status tracking and lead routing.\n2. **Knowledge Assistants**: Provides customer support answers using approved documents from clients.\n3. **Reporting Dashboards**: Summarizes operational data for teams to see what needs attention.\n\nEach project includes clear documentation, a handoff workshop, and a human review point for important decisions.",
+          "revised_reply": "Cedar & Circuit offers three main services:\n\n1. **Workflow Automation**: Reduces repetitive tasks like order-status tracking and lead routing.\n2. **Knowledge Assistants**: Provides customer support answers using approved documents from clients.\n3. **Reporting Dashboards**: Summarizes operational data for teams to see what needs attention.\n\nEach project includes clear documentation, a handoff workshop, and a human review point for important decisions.",
+          "changed": false
+        }
+      },
+      "expected_tool": null,
+      "check_passed": true
+    },
+    {
+      "user": "I am Samira Mansour. I am interested in automating order tracking.",
+      "reply": "Great to meet you, Samira! I just need your email address to proceed.",
+      "trace": {
+        "mode": "LIVE OpenAI",
+        "route": "lead_collection",
+        "tool_calls": [],
+        "reflection": {
+          "draft": "Great to meet you, Samira! I just need your email address to proceed.",
+          "revised_reply": "Great to meet you, Samira! I just need your email address to proceed.",
+          "changed": false
+        }
+      },
+      "expected_tool": null,
+      "check_passed": true
+    },
+    {
+      "user": "samira@example.com",
+      "reply": "Thank you, Samira! I've recorded your interest in automating order tracking. Our team will follow up soon. If you have any more questions, feel free to ask!",
+      "trace": {
+        "mode": "LIVE OpenAI",
+        "route": "lead_collection",
+        "tool_calls": [
+          {
+            "name": "record_customer_interest",
+            "arguments": "{\"email\":\"samira@example.com\",\"name\":\"Samira Mansour\",\"message\":\"I am interested in automating order tracking.\"}",
+            "result": {
+              "ok": true,
+              "record_id": "9e9e6ac7b37a",
+              "status": "interest_recorded"
+            }
+          }
+        ],
+        "reflection": {
+          "draft": "Thank you, Samira! I've recorded your interest in automating order tracking. Our team will follow up soon. If you have any more questions, feel free to ask!",
+          "revised_reply": "Thank you, Samira! I've recorded your interest in automating order tracking. Our team will follow up soon. If you have any more questions, feel free to ask!",
+          "changed": false
+        }
+      },
+      "expected_tool": "record_customer_interest",
+      "check_passed": true
+    },
+    {
+      "user": "Feedback: your contact form is broken.",
+      "reply": "Thank you for your feedback about the contact form being broken. I've logged it for our team to review. If you have any other comments or need assistance, feel free to share!",
+      "trace": {
+        "mode": "LIVE OpenAI",
+        "route": "feedback_and_unanswered",
+        "tool_calls": [
+          {
+            "name": "record_feedback",
+            "arguments": "{\"question\":\"your contact form is broken.\"}",
+            "result": {
+              "ok": true,
+              "record_id": "54cf1b8e9505",
+              "status": "feedback_recorded"
+            }
+          }
+        ],
+        "reflection": {
+          "draft": "Thank you for your feedback about the contact form being broken. I've logged it for our team to review. If you have any other comments or need assistance, feel free to share!",
+          "revised_reply": "Thank you for your feedback about the contact form being broken. I've logged it for our team to review. If you have any other comments or need assistance, feel free to share!",
+          "changed": false
+        }
+      },
+      "expected_tool": "record_feedback",
+      "check_passed": true
+    },
+    {
+      "user": "Do you hold ISO 27001 certification?",
+      "reply": "We do not have information on whether we hold ISO 27001 certification. I've noted your question for our team. If you have more questions or need assistance, feel free to ask!",
+      "trace": {
+        "mode": "LIVE OpenAI",
+        "route": "general_question",
+        "tool_calls": [
+          {
+            "name": "record_feedback",
+            "arguments": "{\"question\":\"Do you hold ISO 27001 certification?\"}",
+            "result": {
+              "ok": true,
+              "record_id": "d3e163246b44",
+              "status": "feedback_recorded"
+            }
+          }
+        ],
+        "reflection": {
+          "draft": "We do not have information on whether we hold ISO 27001 certification. I've noted your question for our team. If you have more questions or need assistance, feel free to ask!",
+          "revised_reply": "We do not have information on whether we hold ISO 27001 certification. I've noted your question for our team. If you have more questions or need assistance, feel free to ask!",
+          "changed": false
+        }
+      },
+      "expected_tool": "record_feedback",
+      "check_passed": true
+    },
+    {
+      "user": "What is the exact price of a dashboard project?",
+      "reply": "We don't publish fixed project prices or delivery timelines for our services, including dashboards. If you have further questions, feel free to ask!",
+      "trace": {
+        "mode": "LIVE OpenAI",
+        "route": "general_question",
+        "tool_calls": [
+          {
+            "name": "record_feedback",
+            "arguments": "{\"question\":\"What is the exact price of a dashboard project?\"}",
+            "result": {
+              "ok": true,
+              "record_id": "31fcbffeb7ad",
+              "status": "feedback_recorded"
+            }
+          }
+        ],
+        "reflection": {
+          "draft": "We don't publish fixed project prices or delivery timelines for our services, including dashboards. If you have further questions, feel free to ask!",
+          "revised_reply": "We don't publish fixed project prices or delivery timelines for our services, including dashboards. If you have further questions, feel free to ask!",
+          "changed": false
+        }
+      },
+      "expected_tool": null,
+      "check_passed": true
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+Offline tests and real OpenAI SDK with HTTP mocked; no live API verification in this test run.
+
+..........................                                               [100%]
+26 passed in 3.50s
